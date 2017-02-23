@@ -71,4 +71,5 @@ merged_data1 <-  unite(tidy_data1,Subject_FormOfActivity,c(Subject,FormOfActivit
 tidy_data2 <- merged_data1 %>% group_by(Subject_FormOfActivity) %>% summarise_if(is.numeric,funs(mean)) %>% arrange(Subject_FormOfActivity)
 
 ## save the tidy data in mean_data.Rdata
-write.table(tidy_data2,file = "mean_data.txt", row.names = FALSE)
+write.table(tidy_data1,file = "mean_data.txt", row.names = FALSE)
+write.table(tidy_data2,file = "mean_grouped_data.txt", row.names = FALSE)
