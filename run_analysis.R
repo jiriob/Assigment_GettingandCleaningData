@@ -36,7 +36,7 @@ columnNumber_MeanStd <-  grep("mean\\(\\)|std\\(\\)",feature_label$FeatureName)
 SelectedTrainingData <- select(training,num_range("V", columnNumber_MeanStd)); rm(training)
 
 ## 3.Uses descriptive activity names to name the activities in the data set
-activity_label <- read.csv("./UCI HAR Dataset/features.txt", sep = "", header = FALSE)
+activity_label <- read.csv("./UCI HAR Dataset/activity_labels.txt", sep = "", header = FALSE)
 Activity <- tbl_df(factor(Activity[[1]], labels = activity_label[,2]))
 colnames(Activity) <- "FormOfActivity"
 
